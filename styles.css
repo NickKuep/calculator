@@ -17,25 +17,37 @@ body {
   grid-column: 1/ 5;
   text-align: end;
   height: 100px;
-  background-color: rgb(192, 203, 212);
+  background-color: rgb(231, 231, 232);
   font-size: 80px;
   border-radius: 10px;
 }
 
 .calculatorBody button {
-  background-color: blanchedalmond;
+  background-color: rgb(246, 236, 222);
   height: 100px;
   width: 100px;
-  border-radius: 10%;
+  border-radius: 10px;
   font-size: large;
   font-weight: bolder;
 }
+
+.calculatorBody .plus_negative {
+  width: 205px;
+  grid-column-start: 2;
+  grid-column-end: 4;
+  background-color: rgb(195, 191, 185);
+}
+
+.calculatorBody .clear {
+  background-color: rgb(195, 191, 185);
+}
+
 .calculatorBody .operator {
-  background-color: orange;
+  background-color: rgb(255, 196, 85);
 }
 
 .calculatorBody .equals {
-  background-color: orange;
+  background-color: rgb(255, 196, 85);
 }
 .calculatorBody #zero {
   grid-column-start: 1;
