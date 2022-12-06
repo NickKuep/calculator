@@ -1,0 +1,22 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calculatorBody {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.display {
+  grid-column: 1/ 5;
+  text-align: end;
+  height: 50px;
+}
+
+#button {
+  background-color: blanchedalmond;
+  height: 50px;
+  width: 100px;
+}
