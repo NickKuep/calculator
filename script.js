@@ -19,12 +19,20 @@ buttons.forEach((btn) => {
       del();
     } else if (btn.className == "equals") {
       equals();
+    } else if (btn.className == "plus_negative") {
+      plusNegative();
     }
   });
 });
 
 //grab the display div
 let display = document.querySelector(".display");
+
+//add or remove '-' from the display and currentOperand
+function plusNegative() {
+  currentOperand = currentOperand * -1;
+  display.textContent = `${currentOperand}`;
+}
 
 //Display number / numbers on display AND store in memory to used with an operator
 
@@ -40,7 +48,6 @@ function buildOperand(num) {
 }
 
 function operatorInput(operatorSelection) {
-  display.textContent = `${operatorSelection}`;
   if (previousOperand == "") {
     previousOperand = currentOperand;
     currentOperand = "";
@@ -69,20 +76,18 @@ function equals() {
   console.log(operator);
   if (operator == "+") {
     sum = calcPrevNum + calcCurNum;
-    display.textContent = `${sum}`;
     previousOperand = sum;
   } else if (operator == "-") {
     sum = calcPrevNum - calcCurNum;
-    display.textContent = `${sum}`;
     previousOperand = sum;
   } else if (operator == "x") {
     sum = calcPrevNum * calcCurNum;
-    display.textContent = `${sum}`;
+
     previousOperand = sum;
   } else if (operator == "÷") {
     sum = calcPrevNum / calcCurNum;
-    display.textContent = `${sum}`;
     previousOperand = sum;
   }
+  display.textContent = `${previousOperand}`;
   currentOperand = "";
 }
