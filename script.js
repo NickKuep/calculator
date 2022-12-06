@@ -1,8 +1,8 @@
 let currentOperand = "";
 let previousOperand = "";
 let operator = "";
-//grab all button elements
 
+//grab all button elements
 let buttons = document.querySelectorAll("button");
 buttons.forEach((btn) => {
   btn.addEventListener("click", function () {
@@ -34,6 +34,12 @@ function plusNegative() {
   display.textContent = `${currentOperand}`;
 }
 
+//remove the right most number from current number
+function del() {
+  currentOperand = Math.floor(currentOperand / 10);
+  console.log("a");
+  display.textContent = `${currentOperand}`;
+}
 //Display number / numbers on display AND store in memory to used with an operator
 
 function numberInput(numberSelection) {
@@ -48,6 +54,7 @@ function buildOperand(num) {
 }
 
 function operatorInput(operatorSelection) {
+  display.textContent = "";
   if (previousOperand == "") {
     previousOperand = currentOperand;
     currentOperand = "";
