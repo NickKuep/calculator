@@ -37,20 +37,18 @@ function plusNegative() {
 //remove the right most number from current number
 function del() {
   currentOperand = Math.floor(currentOperand / 10);
-  console.log("a");
   display.textContent = `${currentOperand}`;
 }
 //Display number / numbers on display AND store in memory to used with an operator
 
 function numberInput(numberSelection) {
-  display.textContent += `${numberSelection}`;
   num = Math.floor(`${numberSelection}`);
   buildOperand(num);
 }
 
 function buildOperand(num) {
   currentOperand += num;
-  console.log(currentOperand);
+  display.textContent = `${currentOperand}`;
 }
 
 function operatorInput(operatorSelection) {
@@ -61,13 +59,16 @@ function operatorInput(operatorSelection) {
   }
   if (operatorSelection == "+") {
     operator = "+";
-    console.log(operator);
   } else if (operatorSelection == "-") {
     operator = "-";
   } else if (operatorSelection == "x") {
     operator = "x";
   } else if (operatorSelection == "÷") {
     operator = "÷";
+  }
+  //allows for multiple calculations without having to hit the equals button
+  if (previousOperand && currentOperand != "") {
+    equals();
   }
 }
 
@@ -80,7 +81,6 @@ function clearInput() {
 function equals() {
   let calcPrevNum = Math.floor(previousOperand);
   let calcCurNum = Math.floor(currentOperand);
-  console.log(operator);
   if (operator == "+") {
     sum = calcPrevNum + calcCurNum;
     previousOperand = sum;

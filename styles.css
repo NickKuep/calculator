@@ -7,16 +7,32 @@ body {
 .calculatorBody {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  background-color: rgb(88, 88, 88);
+  padding: 15px;
+  border-radius: 5%;
+  gap: 3px;
 }
 
 .display {
   grid-column: 1/ 5;
   text-align: end;
-  height: 50px;
+  height: 100px;
+  background-color: rgb(192, 203, 212);
+  font-size: 80px;
 }
 
-#button {
+.calculatorBody button {
   background-color: blanchedalmond;
-  height: 50px;
+  height: 100px;
   width: 100px;
+  border-radius: 10%;
+  font-size: large;
+  font-weight: bolder;
+}
+.calculatorBody .operator {
+  background-color: orange;
+}
+
+.calculatorBody .equals {
+  background-color: orange;
 }
