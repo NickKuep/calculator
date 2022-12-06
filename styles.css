@@ -9,7 +9,7 @@ body {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   background-color: rgb(88, 88, 88);
   padding: 15px;
-  border-radius: 5%;
+  border-radius: 10px;
   gap: 3px;
 }
 
@@ -19,6 +19,7 @@ body {
   height: 100px;
   background-color: rgb(192, 203, 212);
   font-size: 80px;
+  border-radius: 10px;
 }
 
 .calculatorBody button {
@@ -35,4 +36,10 @@ body {
 
 .calculatorBody .equals {
   background-color: orange;
+}
+.calculatorBody #zero {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  width: 205px;
+  border-radius: 10px;
 }

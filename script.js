@@ -1,6 +1,7 @@
 let currentOperand = "";
 let previousOperand = "";
 let operator = "";
+let previousOperator = "";
 
 //grab all button elements
 let buttons = document.querySelectorAll("button");
@@ -56,6 +57,10 @@ function operatorInput(operatorSelection) {
   if (previousOperand == "") {
     previousOperand = currentOperand;
     currentOperand = "";
+    previousOperator = operator;
+  }
+  if (previousOperand && currentOperand != "") {
+    equals(previousOperator);
   }
   if (operatorSelection == "+") {
     operator = "+";
@@ -67,9 +72,6 @@ function operatorInput(operatorSelection) {
     operator = "÷";
   }
   //allows for multiple calculations without having to hit the equals button
-  if (previousOperand && currentOperand != "") {
-    equals();
-  }
 }
 
 function clearInput() {
@@ -89,7 +91,6 @@ function equals() {
     previousOperand = sum;
   } else if (operator == "x") {
     sum = calcPrevNum * calcCurNum;
-
     previousOperand = sum;
   } else if (operator == "÷") {
     sum = calcPrevNum / calcCurNum;
@@ -97,4 +98,5 @@ function equals() {
   }
   display.textContent = `${previousOperand}`;
   currentOperand = "";
+  operator = "";
 }
